@@ -5,7 +5,7 @@
 		<?php do_action('foundationPress_before_content'); ?>
 
 		<h2><?php _e('Search Results for', 'FoundationPress'); ?> "<?php echo get_search_query(); ?>"</h2>
-
+		<input name="search" type="text"   placeholder="To search type and hit enter"/>
 	<?php if ( have_posts() ) : ?>
 
 		<?php while ( have_posts() ) : the_post(); ?>

@@ -1,4 +1,7 @@
 <?php get_header(); ?>
+
+<?php get_template_part('slider'); ?>
+
 <div class="row">
 <!-- Row for main content area -->
 	<div class="small-12 large-8 columns" role="main">

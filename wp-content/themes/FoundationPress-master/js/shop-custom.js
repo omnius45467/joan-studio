@@ -52,6 +52,7 @@
 					} );
 
 					closeCtrl.addEventListener( 'click', function() {
+						var dummy;
 						classie.remove( el, 'checkout--active' );
 						classie.remove( dummy, 'dummy-grid--highlight' );
 					} );

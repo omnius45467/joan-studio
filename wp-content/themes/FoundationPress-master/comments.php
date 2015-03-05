@@ -2,7 +2,7 @@
 if ( have_comments() ) : 
 	if( (is_page() || is_single()) && (!is_home() && !is_front_page()) ) :
 ?>
-	<section id="comments"><?php 	
+	<section class="content-comm" id="comments"><?php
 		
 				
 		wp_list_comments(
@@ -41,7 +41,7 @@ endif;
 		die (__('Please do not load this page directly. Thanks!', 'FoundationPress'));
 
 	if ( post_password_required() ) { ?>
-	<section id="comments">
+	<section class="content-comm" id="comments">
 		<div class="notice">
 			<p class="bottom"><?php _e('This post is password protected. Enter the password to view comments.', 'FoundationPress'); ?></p>
 		</div>
@@ -82,7 +82,6 @@ if ( comments_open() ) :
 			<label for="comment"><?php _e('Comment', 'FoundationPress'); ?></label>
 			<textarea name="comment" id="comment" tabindex="4"></textarea>
 		</p>
-		<p id="allowed_tags" class="small"><strong>XHTML:</strong> <?php _e('You can use these tags:','FoundationPress'); ?> <code><?php echo allowed_tags(); ?></code></p>
 		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment', 'FoundationPress'); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action('comment_form', $post->ID); ?>

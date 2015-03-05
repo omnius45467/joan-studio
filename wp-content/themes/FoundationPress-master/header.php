@@ -49,7 +49,7 @@
 			<div class="container">
 				<div class="sixteen columns">
 					<div class="logo-wrap">
-						<img src="images/logo.png" alt="">
+						<img src="<?php echo get_stylesheet_directory_uri() ; ?>/images/logo.png" alt="<?php bloginfo( 'name' ); ?>">
 					</div>
 					<a class="cd-primary-nav-trigger" href="#0">
 						<span class="cd-menu-text"></span><span class="cd-menu-icon"></span>
@@ -61,55 +61,16 @@
 		<nav>
 			<div class="cd-primary-nav">
 				<ul class="cd-scndr-nav">
-					<li class="cd-label"><a href="/" class="curent-nav-color"><?php bloginfo( 'name' ); ?></a>
-						<ul>
-							<li><a href="index.html" class="curent-nav-color">featured slider</a></li>
-							<li><a href="index1.html">featured image</a></li>
-							<li><a href="index2.html">featured html video</a></li>
-							<li><a href="index3.html">featured youtube video</a></li>
-							<li><a href="index4.html">no-spaced thirds</a></li>
-							<li><a href="index5.html">classic grid</a></li>
-							<li><a href="index6.html">lightbox gallery</a></li>
-							<li><a href="index7.html">3d Curtain effect</a></li>
-						</ul>
-					</li>
+					<li class="cd-label"><a href="/" class="curent-nav-color"><?php bloginfo( 'name' ); ?></a></li>
+					<?php
+					if(has_nav_menu('primary')){
+						wp_nav_menu(array( 'theme_location' => 'primary', 'container' => 'nav', 'container_class' => false, 'container_id' => 'menu-principal', 'fallback_cb' => false));
+					}else{
 
-					<li class="cd-label"><a href="about.html">About us</a></li>
+						wp_nav_menu();
 
-					<li class="cd-label"><a href="blog.html">Blog</a>
-
-						<ul>
-							<li><a href="blog.html">blog page</a></li>
-							<li><a href="post.html">single post</a></li>
-						</ul>
-
-					</li>
-
-					<li class="cd-label"><a href="shop.html">shop</a>
-
-						<ul>
-							<li><a href="shop.html">shop page</a></li>
-							<li><a href="product.html">product page</a></li>
-						</ul>
-
-					</li>
-
-					<li class="cd-label"><a href="contact.html">Contact</a>
-						<ul>
-							<li><a href="contact.html">default</a></li>
-							<li><a href="contact1.html">minimal</a></li>
-						</ul>
-					</li>
-
-					<li class="cd-label"><a href="shortcodes.html">Features</a>
-						<ul>
-							<li><a href="shortcodes.html">shortcodes</a></li>
-							<li><a href="footers.html">footers</a></li>
-							<li><a href="404.html">404 page</a></li>
-							<li><a href="500.html">500 page</a></li>
-							<li><a href="comingsoon.html">coming soon</a></li>
-						</ul>
-					</li>
+					}
+					?>
 				</ul>
 
 				<div class="social-nav">
