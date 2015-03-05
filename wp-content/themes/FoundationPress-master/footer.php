@@ -9,23 +9,37 @@
 		</div>
 		<div class="sixteen columns">
 			<div class="social-footer">
-				<ul class="list-social">
-					<li class="icon-soc tipped" data-title="twitter"  data-tipper-options='{"direction":"top","follow":"true"}'>
-						<a href="#">&#xf099;</a>
-					</li>
-					<li class="icon-soc tipped" data-title="github"  data-tipper-options='{"direction":"top","follow":"true"}'>
-						<a href="#">&#xf09b;</a>
-					</li>
-					<li class="icon-soc tipped" data-title="google +"  data-tipper-options='{"direction":"top","follow":"true"}'>
-						<a href="#">&#xf0d5;</a>
-					</li>
+				<ul class="list-social-nav">
+					<?php
+					$type = 'link';
+					$args = array(
+						'post_type' => $type,
+						'post_status' => 'publish',
+						'orderby' => 'title'
+					);
+					$count = 1;
+					$my_query = null;
+					$my_query = new WP_Query($args);
+					if ($my_query->have_posts()): while($my_query->have_posts()): $my_query->the_post();
+						?>
+
+						<li class="icon-soc-nav tipped" data-title="<?php the_title();?>" data-tipper-options='{"direction":"top","follow":"true"}'>
+
+							<a href="<?php
+							$myExcerpt = get_the_excerpt();
+							$tags = array("<p>", "</p>");
+							$myExcerpt = str_replace($tags, "", $myExcerpt);
+							echo $myExcerpt;
+							?>" class="fa fa-<?php the_title();?> fa-2x"> </a>
+						</li>
+						<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
 				</ul>
 			</div>
 		</div>
 		<div class="sixteen columns">
 			<div class="footer-copy-text">
-				<p>© We are Metis. All rights reserved. 2015</p>
-				<p>Made by IG Design in Kraljevo, Serbia</p>
+				<p>© A Hack By JeR. All rights reserved. 2015</p>
+
 			</div>
 		</div>
 	</div>

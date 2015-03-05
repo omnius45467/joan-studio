@@ -3,6 +3,7 @@
 Template Name: Full Width
 */
 get_header(); ?>
+<?php get_template_part('slider'); ?>
 <div class="row">
 	<div class="small-12 large-12 columns" role="main">
 
@@ -19,11 +20,7 @@ get_header(); ?>
 				$args = array(
 					'post_type' => $type,
 					'post_status' => 'publish',
-					'orderby' => 'title',
-					"title" => 'SERVICE TITLE',
-					"text" => 'SERVICE DETAILS',
-					"image" => 'SERVICE IMAGE',
-					"url" => 'SERVICE BUTTON URL'
+					'orderby' => 'title'
 
 				);
 				$count = 1;
@@ -35,7 +32,7 @@ get_header(); ?>
 					<div class="portfolio-box-1 branding">
 						<div class="mask-1"></div>
 						<img src="<?php echo $src[0]; ?>" alt="<?php the_title();?>">
-						<h6><?php the_title();?></h6>
+						<h6><a href="<?php echo get_permalink(); ?>"><?php the_title();?></a></h6>
 						<p><?php the_content();?></p>
 					</div>
 				<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
@@ -44,7 +41,7 @@ get_header(); ?>
 				<?php wp_link_pages(array('before' => '<nav id="page-nav"><p>' . __('Pages:', 'FoundationPress'), 'after' => '</p></nav>' )); ?>
 				<p><?php the_tags(); ?></p>
 			</footer>
-			<?php comments_template(); ?>
+
 		</article>
 	<?php endwhile; // End the loop ?>
 

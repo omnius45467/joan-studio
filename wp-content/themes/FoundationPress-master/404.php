@@ -1,26 +1,35 @@
 <?php get_header(); ?>
 
-<div class="row">
-	<div class="small-12 large-8 columns" role="main">
-
 		<article <?php post_class() ?> id="post-<?php the_ID(); ?>">
-			<header>
-				<h1 class="entry-title"><?php _e('File Not Found', 'FoundationPress'); ?></h1>
-			</header>
-			<div class="entry-content">
-				<div class="error">
-					<p class="bottom"><?php _e('The page you are looking for might have been removed, had its name changed, or is temporarily unavailable.', 'FoundationPress'); ?></p>
+			<main class="cd-main-content">
+
+				<div class="main-wrapper">
+
+					<div class="section-in white-back padding-top-bottom">
+
+						<div class="container">
+							<div class="sixteen columns">
+								<div class="error-page">
+									<h2>404</h2>
+									<p>The page you are looking for could not be found!</p>
+								</div>
+							</div>
+						</div>
+
+					</div>
+
+					<div class="section-in white-back">
+						<div class="container">
+							<div class="sixteen columns remove-top remove-bottom">
+								<div class="footer-line"></div>
+							</div>
+						</div>
+					</div>
+
 				</div>
-				<p><?php _e('Please try the following:', 'FoundationPress'); ?></p>
-				<ul>
-					<li><?php _e('Check your spelling', 'FoundationPress'); ?></li>
-					<li><?php printf(__('Return to the <a href="%s">home page</a>', 'FoundationPress'), home_url()); ?></li>
-					<li><?php _e('Click the <a href="javascript:history.back()">Back</a> button', 'FoundationPress'); ?></li>
-				</ul>
-			</div>
+
+			</main>
+
 		</article>
 
-	</div>
-	<?php get_sidebar(); ?>
-</div>
 <?php get_footer(); ?>
