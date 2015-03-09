@@ -14,7 +14,8 @@ get_header(); ?>
 				<h1 class="entry-title"><?php the_title(); ?></h1>
 			</header>
 			<div id="projects-grid">
-				<?php the_content(); ?>
+
+
 				<?php
 				$type = 'art';
 				$args = array(
@@ -34,6 +35,7 @@ get_header(); ?>
 						<img src="<?php echo $src[0]; ?>" alt="<?php the_title();?>">
 						<h6><a href="<?php echo get_permalink(); ?>"><?php the_title();?></a></h6>
 						<p><?php the_content();?></p>
+
 					</div>
 				<?php $count++; endwhile; endif; wp_reset_postdata(); ?>
 			</div>

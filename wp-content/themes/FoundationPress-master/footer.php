@@ -173,6 +173,7 @@
 	}
 </script>
 <script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ; ?>/js/shop-custom.js"></script>
+<script type="text/javascript" src="<?php echo get_stylesheet_directory_uri() ; ?>/js/about-custom.js"></script>
 <?php wp_footer(); ?>
 <?php do_action('foundationPress_before_closing_body'); ?>
 </body>

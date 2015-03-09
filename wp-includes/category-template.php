@@ -514,7 +514,7 @@ function wp_list_categories( $args = '' ) {
 			$posts_page = ( 'page' == get_option( 'show_on_front' ) && get_option( 'page_for_posts' ) ) ? get_permalink( get_option( 'page_for_posts' ) ) : home_url( '/' );
 			$posts_page = esc_url( $posts_page );
 			if ( 'list' == $r['style'] ) {
-				$output .= "<li class='cat-item-all'><a href='$posts_page'>$show_option_all</a></li>";
+				$output .= "<a class='cat-item-all' href='$posts_page'>$show_option_all</a>";
 			} else {
 				$output .= "<a href='$posts_page'>$show_option_all</a>";
 			}

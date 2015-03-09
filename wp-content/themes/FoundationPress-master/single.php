@@ -30,28 +30,17 @@
 										<h5><?php the_title(); ?></h5>
 										<?php the_content(); ?>
 									</div>
-									<div class="content-comm">
-
-										<p>Donec vel mi sem. Etiam in nulla arcu, ut vehicula velit. Vivamus dapibus rutrum mi ut aliquam. In hac habitasse platea dictumst. Integer sagittis neque a tortor tempor in porta sem vulputate.</p>
-										<div class="name-aut-replay">John Doe / 04:32 pm / <a href="#"><span>reply</span></a></div>
+									<div class="large-12 columns">
+										<?php do_action('foundationPress_page_before_comments'); ?>
+										<?php comments_template(); ?>
+										<?php do_action('foundationPress_page_after_comments'); ?>
 									</div>
-									<div class="content-comm subcomm">
-
-										<p>Donec vel mi sem. Etiam in nulla arcu, ut vehicula velit. Vivamus dapibus rutrum mi ut aliquam. In hac habitasse platea dictumst. Integer sagittis neque a tortor tempor in porta sem vulputate.</p>
-										<div class="name-aut-replay">John Doe / 04:32 pm / <a href="#"><span>reply</span></a></div>
-									</div>
-									<div class="content-comm">
-
-										<p>Donec vel mi sem. Etiam in nulla arcu, ut vehicula velit. Vivamus dapibus rutrum mi ut aliquam. In hac habitasse platea dictumst. Integer sagittis neque a tortor tempor in porta sem vulputate.</p>
-										<div class="name-aut-replay">John Doe / 04:32 pm / <a href="#"><span>reply</span></a></div>
-									</div>
-									
-									<?php do_action('foundationPress_page_before_comments'); ?>
-									<?php comments_template(); ?>
-									<?php do_action('foundationPress_page_after_comments'); ?>
+									<?php get_template_part('sidebar'); ?>
 									
 								</div>
-									<?php get_template_part('sidebar'); ?>
+
+
+
 							</div>
 
 						</div>

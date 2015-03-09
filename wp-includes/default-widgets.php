@@ -286,7 +286,7 @@ class WP_Widget_Archives extends WP_Widget {
 
 		if ( $d ) {
 ?>
-		<select name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
+		<select class="link-recents" name="archive-dropdown" onchange='document.location.href=this.options[this.selectedIndex].value;'>
 			<option value=""><?php esc_attr_e( 'Select Month' ); ?></option>
 
 			<?php

@@ -2,7 +2,8 @@
 if ( have_comments() ) : 
 	if( (is_page() || is_single()) && (!is_home() && !is_front_page()) ) :
 ?>
-	<section class="content-comm" id="comments"><?php
+<!--	<section class="content-comm" id="comments">-->
+		<?php
 		
 				
 		wp_list_comments(
@@ -28,8 +29,8 @@ if ( have_comments() ) :
 		);
 		
 		?>
-
- 	</section>
+<!---->
+<!-- 	</section>-->
 <?php 
 	endif;
 endif;
@@ -55,7 +56,7 @@ endif;
 if ( comments_open() ) : 
 	if( (is_page() || is_single()) && (!is_home() && !is_front_page()) ) :
 ?>
-<section id="respond">
+<section  id="respond">
 	<h3><?php comment_form_title( __('Leave a Reply', 'FoundationPress'), __('Leave a Reply to %s', 'FoundationPress') ); ?></h3>
 	<p class="cancel-comment-reply"><?php cancel_comment_reply_link(); ?></p>
 	<?php if ( get_option('comment_registration') && !is_user_logged_in() ) : ?>
@@ -82,7 +83,7 @@ if ( comments_open() ) :
 			<label for="comment"><?php _e('Comment', 'FoundationPress'); ?></label>
 			<textarea name="comment" id="comment" tabindex="4"></textarea>
 		</p>
-		<p><input name="submit" class="button" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment', 'FoundationPress'); ?>"></p>
+		<p><input name="submit" class="link-tag" type="submit" id="submit" tabindex="5" value="<?php esc_attr_e('Submit Comment', 'FoundationPress'); ?>"></p>
 		<?php comment_id_fields(); ?>
 		<?php do_action('comment_form', $post->ID); ?>
 	</form>
